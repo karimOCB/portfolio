@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Karim Chaya — AI Creative Designer</title>
 <meta name="description" content="Video editing and graphic design made with AI. Trailers, reels, motion graphics and brand visuals by Karim Chaya.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-FiN/mw9LYNhA+tyJfJ94Id6wbAjooeQGxMGAFmIC9bw='; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232440FF'/%3E%3Cpath d='M20 16h8v13l12-13h10L37 30l14 18H41L31 35l-3 3v10h-8z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="canonical" href="https://karimocb.github.io/portfolio/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://karimocb.github.io/portfolio/">
@@ -12,10 +15,6 @@
 <meta property="og:description" content="Video editing and graphic design made with AI. Trailers, reels, motion graphics and brand visuals by Karim Chaya.">
 <meta property="og:image" content="https://karimocb.github.io/portfolio/demo-reel.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<!-- Portfolio page for the AI video and design work (10 October 2026).
-     Same brand as wireframe.html: cobalt on white, navy bar, Poppins and Inter.
-     Structure: hero, demo reel, What I do, About (with the about-me video), closing.
-     Notes and title research: docs/AI creative portfolio - notes.md. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@500;600&display=swap" rel="stylesheet">
@@ -30,7 +29,7 @@
     --lift-hi: 0 2px 4px rgba(11, 18, 56, .08), 0 18px 36px rgba(11, 18, 56, .12), 0 56px 90px -24px rgba(36, 64, 255, .34);
   }
   * { box-sizing: border-box; margin: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
   body { background: var(--white); color: var(--ink); font-family: Poppins, system-ui, sans-serif; font-size: 17px; line-height: 1.55; padding-bottom: 78px; overflow-x: hidden; }
   a { color: inherit; }
   ul { list-style: none; padding: 0; }
@@ -58,7 +57,7 @@
   header { position: fixed; inset: 0 0 auto 0; z-index: 20; color: var(--white); transition: background .3s, box-shadow .3s; }
   header.solid { background: rgba(11, 18, 56, .84); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 10px 30px -14px rgba(0, 0, 0, .55); }
   header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 56px; }
-  .brand { font-weight: 800; text-transform: uppercase; text-decoration: none; font-size: 16px; letter-spacing: 0.01em; }
+  .brand { padding: 12px 0; font-weight: 800; text-transform: uppercase; text-decoration: none; font-size: 16px; letter-spacing: 0.01em; }
   header nav { display: none; gap: 28px; }
   header nav a { text-decoration: none; font-size: 16px; font-weight: 500; background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; padding-bottom: 4px; transition: background-size .3s var(--ease); }
   header nav a:hover, header nav a:focus-visible { background-size: 100% 2px; }
@@ -121,7 +120,8 @@
   .player { position: relative; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: var(--navy-3); color: var(--white); box-shadow: var(--lift-hi), 0 0 0 1px rgba(255, 255, 255, .08); transform-origin: 50% 100%; transform: rotateX(calc((1 - var(--p, 1)) * 18deg)) scale(calc(.9 + var(--p, 1) * .1)); display: grid; place-items: center; }
   .player video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 
-  .tl { --lab: 0px; position: relative; background: var(--white); border-radius: 18px; padding: 16px; margin-top: 18px; box-shadow: var(--lift); border: 1px solid var(--hair); }
+  /* overflow hidden: the playhead is as wide as the lanes and travels its own width to the right */
+  .tl { --lab: 0px; overflow: hidden; position: relative; background: var(--white); border-radius: 18px; padding: 16px; margin-top: 18px; box-shadow: var(--lift); border: 1px solid var(--hair); }
   .tl__ruler { height: 14px; margin-left: var(--lab); background: repeating-linear-gradient(90deg, var(--hair) 0 1px, transparent 1px 5%); border-bottom: 1px solid var(--hair); }
   .tl__row { margin-top: 8px; }
   .tl__row .label { display: none; }
@@ -304,7 +304,7 @@
       <a href="#work">What I do</a>
       <a href="#about">About</a>
     </nav>
-    <a class="pill wa" href="#">Let's talk</a>
+    <a class="pill wa" href="https://wa.me/5493413621965?text=Hi%20Karim%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener">Let's talk</a>
   </div>
   <div class="progress"></div>
 </header>
@@ -327,7 +327,7 @@
         <p class="lead">I'm Karim Chaya. I edit video, make motion graphics and design. AI takes the repetitive part, so the time goes into the story and the look.</p>
         <div class="cta">
           <a class="pill" href="#reel">Watch the reel</a>
-          <a class="pill ghost wa" href="#">Let's talk</a>
+          <a class="pill ghost wa" href="https://wa.me/5493413621965?text=Hi%20Karim%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener">Let's talk</a>
         </div>
       </div>
 
@@ -353,7 +353,6 @@
 
   <section id="reel" class="in">
     <div class="wrap">
-      <!-- Demo reel: web copy of video/entregas/karim_demo_reel_v1.mp4 -->
       <div class="player-wrap">
         <div class="player">
           <video controls preload="none" playsinline poster="demo-reel.jpg" src="demo-reel.mp4" aria-label="Demo reel: how a video gets made"></video>
@@ -444,7 +443,6 @@
         <p style="margin-top:0">I'm Karim Chaya, from Rosario, Argentina. I started as a video editor and web developer in 2023 and today I also lead marketing projects.</p>
         <p>That mix is how I work: I edit and design, and I build my own tools with AI and code to do both faster.</p>
       </div>
-      <!-- About-me video: web copy of video/entregas/karim_about_creative_v5_adobe_voice.mp4 -->
       <div class="about-video rv" style="--i:1"><video controls preload="none" playsinline poster="about.jpg" src="about.mp4" aria-label="About me video"></video></div>
       <div class="stack">
         <div class="fact rv" style="--i:0"><span class="label">Based in</span><strong>Rosario, Argentina</strong></div>
@@ -460,16 +458,16 @@
     <div class="wrap rv">
       <h2>Have a video or a brand in mind?</h2>
       <p>Tell me what you need and I'll answer with how I would do it and how long it takes.</p>
-      <a class="pill wa" href="#">Message me on WhatsApp</a>
+      <a class="pill wa" href="https://wa.me/5493413621965?text=Hi%20Karim%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener">Message me on WhatsApp</a>
       <p class="note">+54 9 341 362-1965</p>
     </div>
   </section>
 </main>
 
-<div class="bar"><a class="pill wa" href="#">Let's talk</a></div>
+<div class="bar"><a class="pill wa" href="https://wa.me/5493413621965?text=Hi%20Karim%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener">Let's talk</a></div>
 
 <script>
-  // Every contact button opens the same WhatsApp chat with the prepared message.
+  // Every contact button opens the same WhatsApp chat with the prepared message (the links also carry it in the HTML, so they work without scripts).
   const wa = 'https://wa.me/5493413621965?text=' + encodeURIComponent("Hi Karim, I saw your portfolio and I'd like to talk about a project.");
   document.querySelectorAll('.wa').forEach((a) => { a.href = wa; a.target = '_blank'; a.rel = 'noopener'; });
 
